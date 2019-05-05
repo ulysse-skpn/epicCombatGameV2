@@ -117,7 +117,4 @@ public abstract class Character {
         health = health - healthToSubstract;
     }
 
-    public boolean playerHasLost(){
-        return (this.getHealth() <= 0);
-    }
 }

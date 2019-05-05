@@ -18,10 +18,11 @@ public abstract class Character {
         this.agility = agility;
         this.intelligence = intelligence;
         level = strength + agility + intelligence;
-        health = 5*level;
+        health = 5 * level;
     }
 
     public abstract String game(int actionToDo);
+
     public void Opponent(Character opponent) {
         this.opponent = opponent;
     }
@@ -47,7 +48,7 @@ public abstract class Character {
         return intelligence;
     }
 
-    public String getCharacterClass(){
+    public String getCharacterClass() {
         return characterClass;
     }
 
@@ -95,7 +96,18 @@ public abstract class Character {
     }
 
 
-
-    public void healthDecrease(int healthToSubstract) { health = health - healthToSubstract; }
-
+    public void runGame() {
+        int actionToDo;
+        if (health > 0) {
+            do {
+                actionToDo = Character.askAction(playerName + " (" + health + " vitalité), veuillez choisir votre action (1 : attaque basique, 2 : attaque spéciale)", 1, 2);
+                if (actionToDo != 1 && actionToDo != 2) System.out.println("Recommencez : Votre choix n'est pas bon!");
+            } while (actionToDo != 1 && actionToDo != 2);
+            System.out.println(this.game(actionToDo));
+            if (health <= 0) ;
+            this.opponent.runGame();
+        } else {
+            System.out.println("Le " + playerName + " à perdu !");
+        }
+    }
 }

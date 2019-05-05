@@ -3,21 +3,28 @@ package com.ocr.ulysse_sekpon;
 public class GameStart {
 
     public static Character newPlayer(int nbPlayer) {
+
+
+
         int characterClass, level, strength, agility, intelligence, health;
         System.out.println("Création du personnage du Joueur " + nbPlayer);
         characterClass = Character.askAction("Veuillez choisir la classe de votre personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)", 1, 3);
 
         do {
-            level = Character.askAction("Niveau du personnage ?", 1);
+            level = Character.askAction("Niveau du personnage ?", 1, 100);
             health = 5 * level;
             System.out.println("Votre personnage possède " + health + " points de vie");
             System.out.println("Il vous reste " + level + " point(s) restant à allouer aux caractéristiques de votre personnage");
             strength = Character.askAction("Force du personnage ?", 0);
-            while (strength <0 || strength > level) {
+
+            while (level <= 0 || level > 100){
+                System.out.println("Recommencez : Votre choix n'est pas bon!");
+                level = Character.askAction("Niveau du personnage ?", 0);
+            }
+            while (strength < 0 || strength > level) {
                 System.out.println("Recommencez : Votre choix n'est pas bon!");
                 strength = Character.askAction("Force du personnage ?", 0);
             }
-
 
             int levelMinusStrength = level - strength;
             System.out.println("Il vous reste " + levelMinusStrength + " point(s) restant à allouer aux caractéristiques de votre personnage");
@@ -57,4 +64,6 @@ public class GameStart {
         }
         return player;
     }
+
+
 }

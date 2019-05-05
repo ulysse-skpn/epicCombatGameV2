@@ -21,7 +21,7 @@ public abstract class Character {
         health = 5 * level;
     }
 
-    public abstract String game(int actionToDo);
+    public abstract String combat(int actionToDo);
 
     public void Opponent(Character opponent) {
         this.opponent = opponent;
@@ -65,6 +65,7 @@ public abstract class Character {
     }
 
 
+
     public static int askAction(String str, int min) {
         int actionToDo;
         boolean correctAnswer;
@@ -97,17 +98,26 @@ public abstract class Character {
 
 
     public void runGame() {
-        int actionToDo;
+        int chooseAttack;
         if (health > 0) {
             do {
-                actionToDo = Character.askAction(playerName + " (" + health + " vitalité), veuillez choisir votre action (1 : attaque basique, 2 : attaque spéciale)", 1, 2);
-                if (actionToDo != 1 && actionToDo != 2) System.out.println("Recommencez : Votre choix n'est pas bon!");
-            } while (actionToDo != 1 && actionToDo != 2);
-            System.out.println(this.game(actionToDo));
+                chooseAttack = Character.askAction(playerName + " (" + health + " vitalité), veuillez choisir votre action (1 : attaque basique, 2 : attaque spéciale)", 1, 2);
+                if (chooseAttack != 1 && chooseAttack != 2) System.out.println("Recommencez : Votre choix n'est pas bon!");
+            } while (chooseAttack != 1 && chooseAttack != 2);
+            System.out.println(this.combat(chooseAttack));
             if (health <= 0) ;
             this.opponent.runGame();
         } else {
             System.out.println("Le " + playerName + " à perdu !");
         }
+    }
+
+    /**Enlève des points de vie à l'adversaire*/
+    public void healthDecrease(int healthToSubstract){
+        health = health - healthToSubstract;
+    }
+
+    public boolean playerHasLost(){
+        return (this.getHealth() <= 0);
     }
 }

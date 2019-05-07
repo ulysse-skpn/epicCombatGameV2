@@ -28,38 +28,6 @@ public abstract class Character {
     }
 
 
-    public int getLevel() {
-        return level;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public int getAgility() {
-        return agility;
-    }
-
-    public int getIntelligence() {
-        return intelligence;
-    }
-
-    public String getCharacterClass() {
-        return characterClass;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setAgility(int agility) {
-        this.agility = agility;
-    }
-
     public String characterSummary() {
         return word + " ! Je suis le " + characterClass + " " + playerName + ", niveau " + level + ", je possède " + health + " de vitalité, " + strength + " de force, " + agility + " d'agilité et " + intelligence + " d'intelligence !";
     }

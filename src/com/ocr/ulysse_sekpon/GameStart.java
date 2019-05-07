@@ -1,7 +1,10 @@
 package com.ocr.ulysse_sekpon;
 
 public class GameStart {
-
+    /**
+     * Creation d'un nouveau personnage
+     * New player creation
+     * */
     public static Character newPlayer(int nbPlayer) {
 
 

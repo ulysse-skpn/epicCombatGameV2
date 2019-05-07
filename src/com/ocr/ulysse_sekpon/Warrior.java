@@ -1,17 +1,23 @@
 package com.ocr.ulysse_sekpon;
 
 public class Warrior extends Character {
-    /**Création d'un chaine de caractère vide*/
+    /**Création d'un chaine de caractère vide
+     * Creation of empty string
+     * */
     String blank = "";
 
-    /**Constructeur guerrier*/
+    /**Constructeur guerrier
+     * Warrior constructor
+     * */
     public Warrior(int nbPlayer, int strength, int agility, int intelligence) {
         super(nbPlayer, strength, agility, intelligence);
         word = "Wouarggg";
         characterClass = "Guerrier";
     }
 
-    /**Capacité spéciale du guerrier & défaite du personnage quand sa santé tombe à zéro*/
+    /**Attaque basique et spéciale du guerrier & défaite du personnage quand sa santé tombe à zéro
+     * Warrior Basic and Special attack & character defeat if health reach zero
+     * */
     public String combat(int chooseAttack) {
         switch (chooseAttack) {
             case 1:

@@ -1,12 +1,19 @@
 package com.ocr.ulysse_sekpon;
 
 public class Wizard extends Character {
-    /**Création d'un chaine de caractère vide*/
+    /**Création d'un chaine de caractère vide
+     * Creation of empty string
+     * */
     String blank = "";
-    /**Création d'une variable pour la vie maximu du mage*/
+
+    /**Création d'une variable pour la vie maximum du mage
+     * Maximum health variable created
+     * */
     int healthMax;
 
-    /**Constructeur mage*/
+    /**Constructeur mage
+     * Wizard constructor
+     * */
     public Wizard(int nbPlayer, int strength, int agility, int intelligence) {
         super(nbPlayer, strength, agility, intelligence);
         healthMax = health;
@@ -14,7 +21,9 @@ public class Wizard extends Character {
         word = "Abracadabra";
     }
 
-    /**Capacité spéciale du mage & défaite du personnage quand sa santé tombe à zéro*/
+    /**Attaque basique et spéciale du mage & défaite du personnage quand sa santé tombe à zéro
+     * Wizard Basic and Special attack & character defeat if health reach zero
+     * */
     public String combat(int chooseAttack) {
         switch (chooseAttack) {
             case 1:

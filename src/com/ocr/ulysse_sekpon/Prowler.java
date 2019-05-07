@@ -1,17 +1,23 @@
 package com.ocr.ulysse_sekpon;
 
 public class Prowler extends Character {
-    /**Création d'un chaine de caractère vide*/
+    /**Création d'un chaine de caractère vide
+     * Creation of empty string
+     * */
     String blank = "";
 
-    /**Constructeur dur rôdeur*/
+    /**Constructeur du rôdeur
+     * Constructor of prowler
+     * */
     public Prowler(int nbPlayer, int strength, int agility, int intelligence) {
         super(nbPlayer, strength, agility, intelligence);
         word = "...........";
         characterClass = "Rôdeur";
     }
 
-    /**Capacité spéciale du rôdeur & défaite du personnage quand sa santé tombe à zéro*/
+    /**Attaque basique et spéciale du rôdeur & défaite du personnage quand sa santé tombe à zéro
+     * Prowler Basic and Special attack & character defeat if health reach zero
+     * */
     public String combat(int chooseAttack) {
         switch (chooseAttack) {
             case 1:

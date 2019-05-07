@@ -8,7 +8,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 class GameStartTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -53,12 +52,5 @@ class GameStartTest {
         assertEquals("Vous avez choisi un nombre négatif, recommencez\n", outContent.toString().replace("\r\n", "\n"));
     }
 
-    @Test
-    void runGame() {
-    }
-
-    @Test
-    void healthDecrease() {
-    }
 
 }
